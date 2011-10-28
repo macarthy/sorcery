@@ -67,10 +67,10 @@ module Sorcery
           # This submodule requires the developer to define his own mailer class to be used by it.
           def validate_mailer_defined
             msg = "To use reset_password submodule, you must define a mailer (config.reset_password_mailer = YourMailerClass)."
-            if @sorcery_config.nil?
+            if @sorcery_config == nil
               current_config_setting = " no sorcery config its nil "
             else
-              current_config_setting = ", which is current set to " + @sorcery_config.reset_password_mailer
+              current_config_setting = ", which is current set to " + @sorcery_config.inspect
             end 
             raise ArgumentError, msg  if @sorcery_config.reset_password_mailer == nil
           end
