@@ -72,7 +72,7 @@ module Sorcery
             else
               current_config_setting = ", which is current set to " + @sorcery_config.inspect
             end 
-            raise ArgumentError, msg  if @sorcery_config.reset_password_mailer == nil
+            raise ArgumentError, msg  + current_config_setting if @sorcery_config.reset_password_mailer == nil
           end
 
           def define_reset_password_mongoid_fields
