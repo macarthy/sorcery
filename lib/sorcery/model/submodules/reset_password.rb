@@ -30,6 +30,8 @@ module Sorcery
           end
           
           base.sorcery_config.instance_eval do
+            puts @defaults.inspect
+          
             @defaults.merge!(:@reset_password_token_attribute_name            => :reset_password_token,
                              :@reset_password_token_expires_at_attribute_name => :reset_password_token_expires_at,
                              :@reset_password_email_sent_at_attribute_name    => :reset_password_email_sent_at,
